@@ -1,5 +1,5 @@
 # Projeto-TCC
-Projeto TCC - Sistema de gerenciamento de ordenha. Usando API REST com um aplicativo mobile.
+Projeto TCC - Sistema de gerenciamento de ordenha.
 este projeto foi desenvolvido utilizando o framework Django e inclui uma API REST para integração com um aplicativo mobile. Ele permite o gerenciamento de propriedades rurais e animais de forma eficiente e segura, utilizando autenticação de usuários e operações específicas para o sistema.
 
 ---
