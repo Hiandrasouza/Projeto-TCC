@@ -18,9 +18,9 @@ este projeto foi desenvolvido utilizando o framework Django e inclui uma API RES
 
 ## **Tecnologias Utilizadas**
 
-- **Django 4.x**
+- **Django 4.2**
 - **Django REST Framework**: Para a criação da API REST.
-- **SQLite** (ambiente de desenvolvimento) / **PostgreSQL** (produção).
+- **MySQL**: Banco de dados utilizado para armazenar as informações.
 - **Token Authentication**: Para autenticar e autorizar requisições feitas por dispositivos móveis.
 
 ---
