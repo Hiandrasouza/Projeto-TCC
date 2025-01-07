@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - DeLeite</title>
+    <link rel="icon" href="/TCC/img/logo.png" type="image/png">
+    
+    <link rel="stylesheet"  href="{% static 'css/tabela.css' %}?v=1">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logo.jpg' %}" alt="Logo da DeLeite">
+            <h1>DeLeite</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="perfil1.html"><i class="fas fa-user"></i> Perfil</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+{% if producoes %}
+<div class="container">
+    <form method="get" action="{% url 'gerar_pdf' %}">
+        <div class="form-group">
+        <label for="data_inicio">Data de Início:</label>
+        <input type="date" id="data_inicio" name="data_inicio" required>
+</div>
+        <label for="data_fim">Data de Fim:</label>
+        <input type="date" id="data_fim" name="data_fim" required>
+
+        <button type="submit">Gerar PDF</button>
+    </form>
+</div>
+<a href="{% url 'selecionar_propriedade' %}">Escolher outra propriedade</a>
+<button type="submit" href="{% url 'grafico_producao' %}">Gerar Relatório em PDF</button> <!-- Link para gerar o relatório -->
+</body>
+</html>
+<main>
+    <div class="container">
+        <h2 class="table-title">Produções Cadastradas</h2>
+        <table class="styled-table">
+   
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Primeira Ordenha</th>
+                    <th>Segunda Ordenha</th>
+                    <th>Terceira Ordenha</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producao in producoes %}
+                    <tr>
+                        <td>{{ producao.Data }}</td>
+                        <td>{{ producao.primeiraordenha }}</td>
+                        <td>{{ producao.segundaordenha }}</td>
+                        <td>{{ producao.terceiraordenha }}</td>
+                        <td>{{ producao.Total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% else %}
+    <p>Nenhuma produção cadastrada para esta propriedade.</p>
+{% endif %}
+<div class="container">
+    <form method="get" action="{% url 'gerar_pdf' %}">
+        
+        <label for="data_inicio">Data de Início:</label>
+        <input type="date" id="data_inicio" name="data_inicio" required>
+
+        <label for="data_fim">Data de Fim:</label>
+        <input type="date" id="data_fim" name="data_fim" required>
+
+        <button type="submit">Gerar PDF</button>
+    </form>
+</div>
+
+<a href="{% url 'selecionar_propriedade' %}" >Escolher outra propriedade</a>
+<a href="{% url 'grafico_producao' %}" clas="btn-link">Gerar Relatório em PDF</a> <!-- Link para gerar o relatório -->
+
+</body>
+</html>

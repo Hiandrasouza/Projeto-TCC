@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeLeite - Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logo.jpg' %}" alt="Logo da DeLeite">
+            <h1>DeLeite</h1>
+            {% csrf_token %}
+        </div>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-user"></i> Perfil</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'perfil1' %}"><i class="fas fa-user-circle"></i> Perfil</a>
+                        <a href="#"><i class="fas fa-cog"></i> Conta</a>
+                        <a href="#"><i class="fas fa-sliders-h"></i> Configurações</a>
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'listar_animais' %}"><i class="fas fa-cow"></i> Animais</a>
+                        <a href="{% url 'visualizar_producao' %}"><i class="fas fa-tint"></i> Produção Leiteira</a>
+                        <a href="#"><i class="fas fa-exchange-alt"></i> Entrada e Saída de Animais</a>
+                        <a href="#"><i class="fas fa-truck"></i> Distribuição de Leite</a>
+                        <a href="{% url 'exibir_historico' %}"><i class="fas fa-arrows-alt-h"></i> Movimentação dos Animais</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clipboard-list"></i> Cadastros</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'cadAnimal' %}"><i class="fas fa-cow"></i> Animais</a>
+                        <a href="{% url 'cadProducao' %}"><i class="fas fa-tint"></i> Produção Leiteira</a>
+                        <a href=" {% url 'cadFuncionario' %}"><i class="fas fa-users"></i> Funcionários</a>
+                        <a href="{% url 'cadPropriedade' %}"><i class="fas fa-tractor"></i> Propriedades</a>
+                        <a href="{% url 'cadDistribuica' %}"><i class="fas fa-tractor"></i> Distribuicao</a>
+                        
+                    </div>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-heartbeat"></i> Controle Sanitário</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'cadastrar_ou_atualizar' %}"><i class="fas fa-stethoscope"></i> Saúde do Animal</a>
+                        <a href="#"><i class="fas fa-pills"></i> Medicamentos</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="welcome-message">
+            Bem-vindo ao Sistema DeLeite!
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h2>Relatórios</h2>
+                <p>Veja o desempenho do seu rebanho.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h2>Cadastros</h2>
+                <p>Gerencie os registros dos animais.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h2>Controle Sanitário</h2>
+                <p>Mantenha a saúde do rebanho em dia.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

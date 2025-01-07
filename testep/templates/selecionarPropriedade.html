@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Propriedade</title>
+</head>
+<body>
+    <h1>Selecione sua Propriedade</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <select name="propriedade_id">
+            {% for propriedade in propriedades %}
+                <option value="{{ propriedade.idpropriedade }}">{{ propriedade.nomepropriedade }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Selecionar</button>
+    </form>
+</body>
+</html>

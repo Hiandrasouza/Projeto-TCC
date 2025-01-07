@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Propriedade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel='stylesheet' type="text/css" href="{% static 'css/propriedade.css' %}">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src= "{% static 'img/logo.jpg' %}" alt="Logo da DeLeite">
+            <h1>DeLeite</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="{% url 'menu' %}" class="dropbtn"><i class="fas fa-home"></i> Início</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clipboard-list"></i> Cadastros</a>
+                    <div class="dropdown-content">
+                        <a href="Gado.html"><i class="fas fa-cow"></i> Animais</a>
+                        <a href="funcionario.html"><i class="fas fa-users"></i> Funcionários</a>
+                        <a href="propriedade.html"><i class="fas fa-home"></i> Propriedades</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-exchange-alt"></i> Movimentação</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-calendar-alt"></i> Calendário</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <h2 class="project-title">DeLeite</h2>
+        <div class="form-container">
+            <div class="welcome-message">
+                Cadastro de Propriedade
+            </div>
+            
+                <form action="{% url 'cadPropriedade' %}" method="post" autocomplete="off">
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="nome_propriedade">Nome da Propriedade:</label>
+                    <input type="text" id="nomePropriedade" name="nomePropriedade" required="">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nome_proprietario">Nome do Proprietário:</label>
+                    <input type="text" id="nomeProprietario" name="nomeProprietario" required="">
+                </div>
+                
+                <div class="form-group">
+                    <label for="area">Área:</label>
+                    <input type="text" id="area" name="area" required="">
+                </div>
+                
+                <div class="form-group endereco-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="rua" name="rua" placeholder="Rua" required="">
+                    <input type="text" id="bairro" name="bairro" placeholder="Bairro" required="">
+                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" required="">
+                </div>
+        
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+        
+    </main>    
+</body>
+</html>

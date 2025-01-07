@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - DeLeite</title>
+    <link rel="icon" href="/TCC/img/logo.png" type="image/png">
+    
+    <link rel="stylesheet"  href="{% static 'css/tabela.css' %}?v=1">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logo.jpg' %}" alt="Logo da DeLeite">
+            <h1>DeLeite</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="perfil1.html"><i class="fas fa-user"></i> Perfil</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+<h2>Distribuições da Propriedade</h2>
+
+
+    
+
+{% if distribuicoes %}
+<div class="container">
+        <h2 class="table-title">Distribuições Cadastradas</h2>
+        <table class="styled-table">
+
+    <thead>
+        <tr>
+            <th>Data Distribuicao</th>
+            <th>Consumo</th>
+            <th>leite Bezerro</th>
+            <th>Descarte</th>
+            <th>leite Distribuido</th>
+            <th>local Distribuido</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for distribuicao in distribuicoes %}
+        <tr>
+            <td>{{ distribuicao.dataDistribuicao }}</td>
+            <td>{{ distribuicao.Consumo }}</td>
+            <td>{{ distribuicao.leiteBezerro }}</td>
+            <td>{{ distribuicao.Descarte }}</td>
+            <td>{{ distribuicao.leiteDistribuido }}</td>
+            <td>{{ distribuicao.localDistribuido }}</td>
+            
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Nenhuma distribuição encontrada para esta propriedade.</p>
+{% endif %}

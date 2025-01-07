@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #2e472e;
+    --secondary-color: #769413;
+    --accent-color: #7e9e16;
+    --background-color: #65b865;
+    --text-color: #2e472e;
+    --highlight-color: #5a7210;
+    --login-bg-color: rgba(255, 255, 255, 0.8);
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --input-bg-color: #fff;
+    --input-border-color: #ddd;
+}
+
+body {
+    background-image: url('../img/gado.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+.titulo-cadastro {
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 5px;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.caduser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carduser {
+    background-color: var(--login-bg-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 150%;
+    max-width: 600px;
+    border: 2px solid var(--primary-color);
+    box-sizing: border-box;
+}
+
+.carduser img {
+    height: auto;
+    max-width: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.carduser h4 {
+    color: var(--accent-color);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.formcad {
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #fff;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.form-group i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.form-group input {
+    width: 100%;
+    border: none;
+    background: none;
+    font-size: 16px;
+    outline: none;
+    padding: 5px 0;
+    color: var(--text-color);
+}
+
+.endereco-group, .user-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--login-bg-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.endereco-group .input-group, .user-group .input-group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 140px;
+}
+
+.endereco-group i, .user-group i {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.endereco-group input, .user-group input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: var(--text-color);
+}
+
+.password-rules {
+    margin-top: 5px;
+    padding-left: 20px;
+    font-size: 0.9em;
+    color: var(--accent-color);
+    text-align: left;
+    list-style: none;
+}
+
+.password-rules li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.password-rules li::before {
+    content: '•'; 
+    position: absolute;
+    left: 0;
+    color: var(--accent-color); 
+}
+
+.password-rules li.valid::before {
+    content: '✔'; 
+    color: var(--primary-color); 
+}
+
+.password-rules li.valid {
+    color: var(--primary-color); 
+}
+
+
+.password-rules li.invalid::before {
+    content: '•'; 
+    color: var(--accent-color); 
+}
+
+.password-rules li.invalid {
+    color: var(--accent-color); 
+}
+
+
+.btn-group {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.btn-group button {
+    flex: 1;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-group button:hover {
+    background-color: var(--secondary-color);
+}
+
+.login-card {
+    background-color: var(--login-bg-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px var(--box-shadow-color);
+    width: 100%;
+    max-width: 450px; 
+    border: 2px solid var(--primary-color);
+    text-align: center;
+    opacity: 0.9; 
+}
+
+.login-image {
+    width: 280px; 
+    height: 280px;
+    margin-bottom: 5px; 
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.login-title {
+    color: var(--accent-color);
+    font-size: clamp(1.3rem, 4vw, 2rem); 
+    font-weight: 700;
+    margin-bottom: 5px; 
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--input-bg-color);
+    border: 1px solid #2e472e;
+    border-radius: 5px;
+}
+
+.login-form i {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.login-form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.btn-group {
+    margin-top: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px 20px; 
+    background-color: var(--primary-color); 
+    color: white; 
+    border: 2px solid var(--highlight-color); 
+    border-radius: 50px; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--accent-color); 
+    transform: translateY(-3px); 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+
+.link-group {
+    margin-top: 10px;
+}
+
+.link-group a {
+    color: #2e472e;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 8px 20px; 
+    transition: all 0.3s ease;
+    border-radius: 15px; 
+    background-color: transparent; 
+}
+
+.link-group a:hover {
+    color: var(--primary-color);
+    background-color: var(--accent-color); 
+    border-radius: 25px; 
+    text-decoration: none; 
+}
+
+
+.login-card img {
+    margin-bottom: 10px;
+}
+
+.login-form {
+    margin-top: 20px;
+}

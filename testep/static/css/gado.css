@@ -1,0 +1,283 @@
+:root {
+    --primary-color: #273427;
+    --secondary-color: #769413;
+    --accent-color: #769413;
+    --background-color: #f4f4f4;
+    --text-color: #ccc;
+    --highlight-color: #728C5E;
+    --card-color: rgba(241, 245, 237, 0.8);
+    --card-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--secondary-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 15px 30px;
+    color: var(--text-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 15px;
+}
+
+.logo h1 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a,
+.dropbtn {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 12px 18px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover,
+.dropdown:hover .dropbtn {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.project-title {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container {
+    background-color: var(--card-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px var(--card-shadow-color);
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.welcome-message {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    text-align: left;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+    outline: none;
+}
+
+.form-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: var(--background-color) no-repeat right 10px center;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="%23769413" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 8 10 12 14 8"/></svg>');
+    background-size: 22px;
+    padding-right: 40px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 6px;
+    font-size: 1em;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container select:hover,
+.form-container select:focus {
+    background-color: var(--background-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+.form-container select::-ms-expand {
+    display: none;
+}
+
+.form-container select option {
+    background-color: var(--card-color);
+    color: var(--primary-color);
+    padding: 10px;
+}
+
+.form-container select option:checked {
+    background-color: var(--secondary-color); 
+    color: #fff; 
+}
+
+.endereco-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.endereco-group input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.form-container button {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container button:hover {
+    background-color: var(--highlight-color);
+    transform: scale(1.05);
+}
+
+.form-container a {
+    display: block;
+    margin-top: 25px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .endereco-group {
+        flex-direction: column;
+    }
+
+    .endereco-group input {
+        margin-bottom: 10px;
+    }
+}

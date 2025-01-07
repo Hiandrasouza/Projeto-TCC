@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - DeLeite</title>
+    <link rel="icon" href="/TCC/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/tabela.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.png" alt="Logo da DeLeite">
+            <h1>DeLeite</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="perfil1.html"><i class="fas fa-user"></i> Perfil</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form method="POST" class="property-form">
+                <h2 class="table-title">Selecione a Propriedade</h2>
+                <div class="select-wrapper">
+                    <select name="propriedade_id">
+                        <option value="1">Propriedade 1</option>
+                        <option value="2">Propriedade 2</option>
+                        <option value="3">Propriedade 3</option>
+                        <option value="4">Propriedade 4</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Selecionar</button>
+            </form>
+        </div>
+        <div class="container">
+            <h2 class="table-title">Produções Cadastradas</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Mês</th>
+                        <th>Primeira Ordem</th>
+                        <th>Segunda Ordem</th>
+                        <th>Terceira Ordem</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maio 2024</td>
+                        <td>4.000</td>
+                        <td>4.500</td>
+                        <td>4.000</td>
+                        <td>12.500</td>
+                    </tr>
+                    <tr>
+                        <td>Junho 2024</td>
+                        <td>4.200</td>
+                        <td>4.300</td>
+                        <td>4.400</td>
+                        <td>12.900</td>
+                    </tr>
+                    <tr>
+                        <td>Julho 2024</td>
+                        <td>4.300</td>
+                        <td>4.500</td>
+                        <td>4.700</td>
+                        <td>13.500</td>
+                    </tr>
+                    <tr>
+                        <td>Agosto 2024</td>
+                        <td>4.400</td>
+                        <td>4.600</td>
+                        <td>4.800</td>
+                        <td>13.800</td>
+                    </tr>
+                    <tr>
+                        <td>Setembro 2024</td>
+                        <td>4.500</td>
+                        <td>4.700</td>
+                        <td>4.900</td>
+                        <td>14.100</td>
+                    </tr>
+                    <tr>
+                        <td>Outubro 2024</td>
+                        <td>4.600</td>
+                        <td>4.800</td>
+                        <td>5.000</td>
+                        <td>14.400</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttons">
+                <button class="btn" id="generatePDF">Gerar Relatório PDF</button>
+                <button class="btn" id="chooseProperty">Escolher Outra Propriedade</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

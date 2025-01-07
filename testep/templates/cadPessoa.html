@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - DeLeite</title>
+    <link rel="icon" href="/TCC/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+</head>
+<body>
+    <div class="caduser cadastro">
+        <div class="carduser step-1 active">
+            <img src="{% static 'img/user.png' %}" alt="Logo da DeLeite">
+            <h4 class="titulo-cadastro">Cadastro</h4>
+            <form action="{% url 'registro_view' %}" method="post" autocomplete="off" class="formcad">
+                {% csrf_token %}
+                <div class="form-group user-group">
+                    <div class="input-group">
+                        <i class="fa fa-user"></i>
+                        <input type="text" id="nomeusuario" name="nomeusuario" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-id-card"></i>
+                        <input type="text" id="cpfusuario" name="cpfusuario" placeholder="CPF" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" id="emailusuario" name="emailusuario" placeholder="E-mail" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-phone"></i>
+                        <input type="text" id="telefoneUsuario" name="telefoneUsuario" placeholder="Telefone" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-calendar"></i>
+                        <input type="date" id="dataNascimento" name="dataNascimento" placeholder="Data de Nascimento" required>
+                    </div>
+                </div>
+
+                <div class="form-group endereco-group">
+                    <div class="input-group">
+                        <i class="fa fa-road"></i>
+                        <input type="text" id="rua" name="rua" placeholder="Rua" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-building"></i>
+                        <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-city"></i> 
+                        <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-map-marker-alt"></i> 
+                        <input type="text" id="estado" name="estado" placeholder="Estado" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="numero" name="numero" placeholder="Número" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Senha" name="password1" id="password1" oninput="validatePassword()">
+                    <i class="fa fa-eye" onclick="togglePassword('password1')"></i>
+                </div>
+                <ul class="password-rules">
+                    <li id="rule1" class="invalid">Sua senha não pode ser muito parecida com suas outras informações pessoais.</li>
+                    <li id="rule2" class="invalid">Sua senha deve conter pelo menos 8 caracteres.</li>
+                    <li id="rule3" class="invalid">Sua senha não pode ser uma senha comumente usada.</li>
+                    <li id="rule4" class="invalid">Sua senha não pode ser totalmente numérica.</li>
+                </ul>
+                <div class="form-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Confirmar Senha" name="password2" id="password2" oninput="validatePassword()">
+                    <i class="fa fa-eye" onclick="togglePassword('password2')"></i>
+                </div>
+                <div class="btn-group">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js'%}"></script>
+</body>
+</html>

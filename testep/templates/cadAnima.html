@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Animais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' type="text/css" href="{% static 'css/propriedade.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logo.jpg'%}" alt="Logo da Deleite">
+            <h1>Deleite</h1>
+            
+        </div>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="{% url 'menu' %}" class="dropbtn"><i class="fas fa-home"></i> Início</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clipboard-list"></i> Cadastros</a>
+                    <div class="dropdown-content">
+                        <a href="Gado.html"><i class="fas fa-cow"></i> Animais</a>
+                        <a href="funcionario.html"><i class="fas fa-users"></i> Funcionários</a>
+                        <a href="propriedade.html"><i class="fas fa-home"></i> Propriedades</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-exchange-alt"></i> Movimentação</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-calendar-alt"></i> Calendário</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<div class="form-container">
+    <form method="GET" action=".">
+    
+        <label for="idanimal_id">Selecione um Animal:</label>
+        <select name="idanimal_id" id="idanimal_id" onchange="this.form.submit()">
+            <option value="">-- Selecione --</option>
+            {% for animal in form.fields.idanimal_id.queryset %}
+                <option value="{{ animal.idanimal }}" 
+                    {% if animal.idanimal == request.GET.idanimal_id %}
+                        selected
+                    {% endif %}
+                    >{{ animal.idanimal }}  <!-- Aqui, substitua animal.nomeAnimal por animal.idanimal_id -->
+                </option>
+            {% endfor %}
+    </select>
+</form>
+
+
+        {% if form %}
+            <div class="form-container">
+                <form method="POST">
+                    {% csrf_token %}
+                    
+
+                    <!-- Campo ID Animal -->
+                    <div class="form-group">
+                    <label for="{{ form.idanimal_id.id_for_label }}">ID Animal:</label>
+                    <input type="text" name="{{ form.idanimal_id.name }}" id="{{ form.idanimal_id.id_for_label }}" value="{{ form.idanimal_id.value }}" required>
+                    {% if form.idanimal_id.errors %}
+                        <div class="error-message">
+                            {% for error in form.idanimal_id.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    
+
+                    <!-- Campo Intercorrência -->
+                    <div class="form-group">
+                    <label for="{{ form.Intercorrencia.id_for_label }}">Intercorrência:</label>
+                    <input type="text" name="{{ form.Intercorrencia.name }}" id="{{ form.Intercorrencia.id_for_label }}" value="{{ form.Intercorrencia.value }}" required>
+                    {% if form.Intercorrencia.errors %}
+                        <div class="error-message">
+                            {% for error in form.Intercorrencia.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    
+                    <!-- Campo Medicamento -->
+                    <div class="form-group">
+                    <label for="{{ form.Medicamento.id_for_label }}">Medicamento:</label>
+                    <input type="text" name="{{ form.Medicamento.name }}" id="{{ form.Medicamento.id_for_label }}" value="{{ form.Medicamento.value }}" required>
+                    {% if form.Medicamento.errors %}
+                        <div class="error-message">
+                            {% for error in form.Medicamento.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Estado Reprodutivo -->
+                    <div class="form-group">
+                    <label for="{{ form.EstadoReprodutivo.id_for_label }}">Estado Reprodutivo:</label>
+                    <input type="text" name="{{ form.EstadoReprodutivo.name }}" id="{{ form.EstadoReprodutivo.id_for_label }}" value="{{ form.EstadoReprodutivo.value }}" required>
+                    {% if form.EstadoReprodutivo.errors %}
+                        <div class="error-message">
+                            {% for error in form.EstadoReprodutivo.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Previsão de Parto -->
+                    <div class="form-group">
+                    <label for="{{ form.previsaoparto.id_for_label }}">Previsão de Parto:</label>
+                    <input type="date" name="{{ form.previsaoparto.name }}" id="{{ form.previsaoparto.id_for_label }}" value="{{ form.previsaoparto.value|date:"Y-m-d" }}" required>
+                    {% if form.previsaoparto.errors %}
+                        <div class="error-message">
+                            {% for error in form.previsaoparto.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Estado Produtivo -->
+                    <div class="form-group">
+                    <label for="{{ form.estadoprodutivo.id_for_label }}">Estado Produtivo:</label>
+                    <input type="text" name="{{ form.estadoprodutivo.name }}" id="{{ form.estadoprodutivo.id_for_label }}" value="{{ form.estadoprodutivo.value }}" required>
+                    {% if form.estadoprodutivo.errors %}
+                        <div class="error-message">
+                            {% for error in form.estadoprodutivo.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Início de Lactação -->
+                    <label for="{{ form.iniciolactacao.id_for_label }}">Início de Lactação:</label>
+                    <input type="date" name="{{ form.iniciolactacao.name }}" id="{{ form.iniciolactacao.id_for_label }}" value="{{ form.iniciolactacao.value|date:"Y-m-d" }}" required>
+                    {% if form.iniciolactacao.errors %}
+                        <div class="error-message">
+                            {% for error in form.iniciolactacao.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <!-- Campo Fim de Lactação -->
+                    <div class="form-group">
+                    <label for="{{ form.fimlactacao.id_for_label }}">Fim de Lactação:</label>
+                    <input type="date" name="{{ form.fimlactacao.name }}" id="{{ form.fimlactacao.id_for_label }}" value="{{form.fimlactacao.value|date:"Y-m-d" }}" required>
+                    {% if form.fimlactacao.errors %}
+                        <div class="error-message">
+                            {% for error in form.fimlactacao.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Dias de Lactação -->
+                    <div class="form-group">
+                    <label for="{{ form.diaslactacao.id_for_label }}">Dias de Lactação:</label>
+                    <input type="number" name="{{ form.diaslactacao.name }}" id="{{ form.diaslactacao.id_for_label }}" value="{{ form.diaslactacao.value }}" required>
+                    {% if form.diaslactacao.errors %}
+                        <div class="error-message">
+                            {% for error in form.diaslactacao.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Morte -->
+                    <div class="form-group">
+                    <label for="{{ form.Morte.id_for_label }}">Morte:</label>
+                    <input type="text" name="{{ form.Morte.name }}" id="{{ form.Morte.id_for_label }}" value="{{ form.Morte.value }}" required>
+                    {% if form.Morte.errors %}
+                        <div class="error-message">
+                            {% for error in form.Morte.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Peso Atual -->
+                    <div class="form-group">
+                    <label for="{{ form.PesoAtual.id_for_label }}">Peso Atual:</label>
+                    <input type="number" step="0.01" name="{{ form.PesoAtual.name }}" id="{{ form.PesoAtual.id_for_label }}" value="{{ form.PesoAtual.value }}" required>
+                    {% if form.PesoAtual.errors %}
+                        <div class="error-message">
+                            {% for error in form.PesoAtual.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Campo Desmame -->
+                    <div class="form-group">
+                    <label for="{{ form.Desmame.id_for_label }}">Desmame:</label>
+                    <input type="date" name="{{ form.Desmame.name }}" id="{{ form.Desmame.id_for_label }}" value="{{  form.Desmame.value|date:"Y-m-d"}}" required>
+                    {% if form.Desmame.errors %}
+                        <div class="error-message">
+                            {% for error in form.Desmame.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+                    <button type="submit">
+                        {% if is_new %}
+                            Cadastrar Animal
+                        {% else %}
+                            Atualizar Animal
+                        {% endif %}
+                    </button>
+                </form>
+            </div>
+        {% else %}
+             <p>Nenhum</p>
+        {% endif %}
+   </div> 
+</body>
+</html>

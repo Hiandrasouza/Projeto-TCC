@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Cadastro de Propriedade</title>
+    <link rel='stylesheet' type="text/css" href="{% static 'css/estilo.css' %}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Propriedade</h1>
+        
+        <form action="{% url 'cadSaude' %}" method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Cadastrar Propriedade</button>
+        </form>
+    </div>
+   
+</body>
+</html>

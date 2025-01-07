@@ -1,0 +1,179 @@
+body {
+    background-image: url('../../img/gado.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.caduser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carduser {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 50px 40px;
+    border-radius: 15px;
+    border: 2px solid #358b35; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 360px;
+    transition: all 0.3s ease-in-out;
+}
+
+.carduser:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: #2a742a; 
+}
+
+.carduser img {
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.carduser h4 {
+    margin: 10px 0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.carduser h5 {
+    margin: 5px 0;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.carduser .form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.carduser .form-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.carduser .form-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s ease-in-out;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carduser .form-group input:focus {
+    border-color: #358b35;
+    outline: none;
+}
+
+.carduser .link-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.carduser .link-group a {
+    color: #2a742a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-size: 14px;
+}
+
+.carduser .link-group a:hover {
+    color: #1d3a1d;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.carduser .link-group a:focus {
+    outline: 2px solid #1d3a1d;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.link-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: center;
+    gap: 20px; 
+}
+
+.link-group a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    border: 2px solid #2a742a;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #2a742a;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.link-group a:hover {
+    background-color: #2a742a;
+    color: white;
+}
+
+.link-group a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 116, 42, 0.5);
+}
+
+.carduser .btn-group button {
+    background: #5f6b3a;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px; 
+}
+
+.carduser .btn-group button:hover {
+    background: #5f6b3a;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.carduser .btn-group button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(52, 168, 83, 0.5);
+}

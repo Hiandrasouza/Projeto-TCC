@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produção - DeLeite</title>
+    <link rel="icon" href="/TCC/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/TCC/css/producao.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/TCC/img/logo.png" alt="Logo da DeLeite">
+            <h1>DeLeite</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="Menu.html" class="dropbtn"><i class="fas fa-home"></i> Início</a>
+                </li>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn"><i class="fas fa-user"></i> Perfil</a>
+                <div class="dropdown-content">
+                    <a href="perfil1.html"><i class="fas fa-user-circle"></i> Perfil</a>
+                    <a href="#"><i class="fas fa-cog"></i> Conta</a>
+                    <a href="#"><i class="fas fa-sliders-h"></i> Configurações</a>
+                    <a href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                </div>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clipboard-list"></i> Cadastros</a>
+                    <div class="dropdown-content">
+                        <a href="Gado.html"> <i class="fas fa-tint"></i> Animais</a>
+                        <a href="producao_leiteira.html"><i class="fas fa-glass-whiskey"></i> Produção Leiteira</a>
+                        <a href="funcionario.html"><i class="fas fa-users"></i> Funcionários</a>
+                        <a href="propriedade.html"><i class="fa-solid fa-house"></i> Propriedades</a>
+                        <a href="distribuicao.html"><i class="fa-solid fa-truck"></i> Distribuição de Leite</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-exchange-alt"></i> Movimentação</a>
+                </li>
+                <li class="dropdown">
+                    <a href="calendario.html" class="dropbtn"><i class="fas fa-calendar-alt"></i> Calendário</a>
+                </li>
+                <li class="dropdown">
+                    <a href="Relatorio_Propriedade.html" class="dropbtn"><i class="fas fa-file-alt"></i> Relatorio Propriedade</a>
+                </li> 
+                <li class="dropdown">
+                    <a href="relatorio.html" class="dropbtn"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-heartbeat"></i> Controle Sanitário</a>
+                    <div class="dropdown-content">
+                        <a href="saude.html"><i class="fas fa-stethoscope"></i> Saúde do Animal</a>
+                        <a href="medicamento.html"><i class="fas fa-pills"></i> Medicamentos</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <h2 class="project-title">DeLeite</h2>
+        <div class="form-container">
+            <div class="welcome-message">
+                Cadastro de Produção de Leite
+            </div>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="brinco_animal">Brinco do Animal:</label>
+                    <input type="text" id="brinco_animal" name="brinco_animal" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="nome_animal">Nome do Animal:</label>
+                    <input type="text" id="nome_animal" name="nome_animal" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="funcionario">Funcionário:</label>
+                    <input type="text" id="funcionario" name="funcionario" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="ord1">1ª Ordenha (kg):</label>
+                    <input type="number" step="0.01" id="ord1" name="ord1" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="ord2">2ª Ordenha (kg):</label>
+                    <input type="number" step="0.01" id="ord2" name="ord2" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="ord3">3ª Ordenha (kg):</label>
+                    <input type="number" step="0.01" id="ord3" name="ord3" required="">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit">Salvar</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>    
+</body>
+</html>

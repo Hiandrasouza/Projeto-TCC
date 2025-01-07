@@ -1,0 +1,49 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - DeLeite</title>
+    <link rel="icon" href="/TCC/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel='stylesheet' type="text/css" href="{% static 'css/tabela.css' %}?v=1">
+</head>
+<body>
+  
+  <header>
+      <div class="logo">
+          <img src="{% static 'img/logo.jpg' %}" alt="Logo da DeLeite">
+          <h1>DeLeite</h1>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+              <li><a href="perfil1.html"><i class="fas fa-user"></i> Perfil</a></li>
+              <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+          </ul>
+      </nav>
+    </nav>
+  </header>
+  
+  
+<h2>Detalhes do Animal</h2>
+
+  <ul class="animal-detais">
+    <li><strong>Nome:</strong> {{ animal.nomeAnimal }}</li>
+    <li><strong>Raça:</strong> {{ animal.raca }}</li>
+    <li><strong>Categoria:</strong> {{ animal.categoria }}</li>
+    <li><strong>Data de Nascimento:</strong> {{ animal.dataNascimento }}</li>
+    <li><strong>Saúde:</strong> {{ animal.saude }}</li>
+    <li><strong>Peso Atual:</strong> {{ animal.pesoAtual }}</li>
+    <li><strong>EsatadoReprodutivo :</strong> {{ animal.estadoProdutivo }}</li>
+    <li><strong>Estado: Produtivo</strong> {{ animal.estadoProdutivo}}</li>
+    <li><strong>Pai:</strong> {{ animal.pai }}</li>
+    <li><strong>Mãe:</strong> {{ animal.mae}}</li>
+    <li><strong>Tipo de Aleitamento:</strong> {{ animal.tipoAleitamento }}</li>
+    <li><strong>Desmame:</strong> {{ animal.desmame }}</li>
+  </ul>
+  <a href="{% url 'gerar_pdf_animal' animal.idanimal %}" class="btn">Gerar PDF</a>
+  <a href="{% url 'listar_animais' %}" class="btn btn-secondary">Voltar à Lista</a>

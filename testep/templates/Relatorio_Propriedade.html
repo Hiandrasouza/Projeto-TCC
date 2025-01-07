@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - DeLeite</title>
+    <link rel="icon" href="/TCC/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/TCC/css/relatorio_propriedade.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/TCC/img/logo.png" alt="Logo da DeLeite">
+            <h1>DeLeite</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="Menu.html" class="dropbtn"><i class="fas fa-home"></i> Início</a>
+                </li>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn"><i class="fas fa-user"></i> Perfil</a>
+                <div class="dropdown-content">
+                    <a href="perfil1.html"><i class="fas fa-user-circle"></i> Perfil</a>
+                    <a href="#"><i class="fas fa-cog"></i> Conta</a>
+                    <a href="#"><i class="fas fa-sliders-h"></i> Configurações</a>
+                    <a href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                </div>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clipboard-list"></i> Cadastros</a>
+                    <div class="dropdown-content">
+                        <a href="Gado.html"><i class="fas fa-tint"></i> Animais</a>
+                        <a href="producao_leiteira.html"><i class="fas fa-glass-whiskey"></i> Produção Leiteira</a>
+                        <a href="funcionario.html"><i class="fas fa-users"></i> Funcionários</a>
+                        <a href="propriedade.html"><i class="fa-solid fa-house"></i> Propriedades</a>
+                        <a href="distribuicao.html"><i class="fa-solid fa-truck"></i> Distribuição de Leite</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-exchange-alt"></i> Movimentação</a>
+                </li>
+                <li class="dropdown">
+                    <a href="calendario.html" class="dropbtn"><i class="fas fa-calendar-alt"></i> Calendário</a>
+                </li>
+                <li class="dropdown">
+                    <a href="relatorio.html" class="dropbtn"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-heartbeat"></i> Controle Sanitário</a>
+                    <div class="dropdown-content">
+                        <a href="saude.html"><i class="fas fa-stethoscope"></i> Saúde do Animal</a>
+                        <a href="medicamento.html"><i class="fas fa-pills"></i> Medicamentos</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h2 class="project-title">DeLeite</h2>
+        <div class="form-container">
+            <div class="welcome-message">RELATÓRIO DE PROPRIEDADE</div>
+            <div class="form-group">
+                <label for="raca">ID da Propriedade:</label>
+                <select id="raca" name="raca">
+                    <option>Andreia</option>
+                    <option>Hiandra</option>
+                    <option>Sayure</option>
+                </select>
+            </div>
+                <button type="submit">Visualizar Propriedade</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

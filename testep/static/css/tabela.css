@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #273427;;      /* Cor principal */
+    --secondary-color: #769413;    /* Cor secundária */
+    --accent-color: #6a7d4f;       /* Cor de destaque */
+    --background-color: rgba(244, 244, 244, 0.95);  /* Cor de fundo */
+    --text-color: #333333;         /* Cor do texto */
+    --highlight-color: #728C5E;    /* Cor para destaque */
+    --card-color: #ffffff;         /* Cor de fundo dos cards */
+    --card-shadow-color: rgba(0, 0, 0, 0.15);  /* Cor da sombra do card */
+    --button-hover-color: #5b6a3e; /* Cor do botão ao passar o mouse */
+    --border-radius: 12px;         /* Raio da borda */
+    --transition-time: 0.3s;       /* Tempo de transição */
+}
+
+:root {
+    --primary-color: #273427; 
+    --secondary-color: #769413;  
+    --accent-color: #6a7d4f; 
+    --background-color: rgba(244, 244, 244, 0.95); 
+    --text-color: #333333;  
+    --highlight-color: #728C5E;  
+    --card-color: #ffffff; 
+    --card-shadow-color: rgba(0, 0, 0, 0.15);
+    --button-hover-color: #5b6a3e;  
+    --border-radius: 12px; 
+    --transition-time: 0.3s;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+    background: url('/TCC/img/capa.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: var(--background-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--secondary-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 10px 30px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: #ccc;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 20px;
+    padding: 12px 18px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Estilos para o select */
+select-wrapper {
+    position: relative;
+}
+
+select {
+    padding: 14px 18px;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: var(--primary-color);
+    transition: all var(--transition-time);
+    outline: none;
+    width: 100%;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+select:focus {
+    border-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 1); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+select:hover {
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-color: var(--accent-color);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select::after {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
+/* Estilos para o container, tabela e botões */
+.container {
+    background: var(--card-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--card-shadow-color);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.table-title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+    text-align: center;
+}
+
+.styled-table thead {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--card-shadow-color);
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.styled-table tbody tr:nth-child(odd) {
+    background-color: #d8e3cb;
+}
+
+.styled-table tbody tr:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: var(--button-hover-color);
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .table-title {
+        font-size: 1.6em;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+}
+    .btn-link {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--secondary-color);
+        background-color: transparent;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        border: 2px solid var(--secondary-color);
+        border-radius: var(--border-radius);
+        transition: all var(--transition-time);
+    }
+    
+    .btn-link:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        border-color: var(--secondary-color);
+    }
+    h2{
+        font-size: 2em;
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .animal-detais {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 600px;
+        background-color: var(--card-color);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 10px var(--card-shadow-color);
+        padding: 100px;
+        line-height: 1.8;
+    }
+    
+    .animal-detais li {
+        font-size: 1.1em;
+        color: var(--text-color);
+        margin-bottom: 10px;
+    }
+    
+    .animal-detais li strong {
+        color: var(--secondary-color);
+    }
+    
+    .btn {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: var(--border-radius);
+        transition: background-color var(--transition-time);
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .btn-secondary {
+        background-color: var(--primary-color);
+    }
+    
+    .btn:hover {
+        background-color: var(--button-hover-color);
+    }
+    
+    .btn-secondary:hover {
+        background-color: #3a4a2e; /* Cor mais escura para o botão secundário */
+    }
+    
+    .animal-details + .btn {
+        margin-right: 10px;
+    }
